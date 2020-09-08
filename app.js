@@ -14,13 +14,13 @@ const userRoutes = require('./src/routes/user');
 // app
 const app = express();
 // // db
-// mongoose
-//     .connect(process.env.DATABASE, {
-//         useNewUrlParser:true,
-//         useCreateIndex:true,
-//         useUnifiedTopology:true
-//     })
-//     .then(()=>console.log('Database connection is Up'));
+mongoose
+    .connect(process.env.DATABASE, {
+        useNewUrlParser:true,
+        useCreateIndex:true,
+        useUnifiedTopology:true
+    })
+    .then(()=>console.log('Database connection is Up'));
 
 // middleware functions 
 app.use(morgan('dev'));

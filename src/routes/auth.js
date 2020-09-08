@@ -1,8 +1,15 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
+const {
+    signup,
+    signin,
+    signout
+} = require("../func/auth");
+const { userSignupValidator } = require("../func/userValidator");
 
-
-router.get('/', (req, res)=> res.send('Our auth endpoint  is up and running'));
+router.post("/signup", userSignupValidator, signup);
+router.post("/signin", signin);
+router.get("/signout", signout);
 
 module.exports = router;
